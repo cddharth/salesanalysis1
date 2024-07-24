@@ -117,9 +117,18 @@ This dashboard provide insights on some key factors such as sales by team, profi
 
     - Variance % = DIVIDE([Variance], [Total Target])
 
+    - No. of Products = DISTINCTCOUNT(actuals[Product])
+
+    - Most Sold Product = 
+        MAXX(
+	        KEEPFILTERS(VALUES('actuals'[Sales])),
+	        CALCULATE(MAX('actuals'[Product]))
+        )
+
     
     snap of schema after introduction of new measures-
-    ![image](https://github.com/user-attachments/assets/cd5cfca8-b261-4bcc-a450-76bac8d0363f)
+    ![image](https://github.com/user-attachments/assets/82310a95-52aa-4600-bd63-50d87aa446af)
+
 
 
 ### Generating Visuals, Report and Insights provided
@@ -136,61 +145,52 @@ From page 2 onwards I've tried to answer the following questions which were form
     4. which product has highest profit
     5. Forecast for next 3 months.....
 
-- step 1: I've added 3 cards, a slicer, 4 charts and a gauge meter for the 1st page of the report.
-    
+- page 1: I've added 3 cards, a slicer, 4 charts and a gauge meter for the 1st page of the report.
+
     cards- Will provide information on total sales, total boxes shipped and the average of sales
 
     slicer- added category of product as a filter so that we can sort data based on category
 
-    charts- first chart is a coloumn chart which provide profits by product details, second chart is a clustered coloumn chart which provide information on the best performing team, 3rd  chart is a line chart which provides profit by month forecasting 3 months into future. furth chart is a coloumn chart which provides insight on variance by team.
+    charts- first chart is a coloumn chart which provide profits by product details, second chart is a clustered coloumn chart which provide information on the best performing team, 3rd chart is a line chart which provides profit by month forecasting 3 months into future. furth chart is a coloumn chart which provides insight on variance by team.
 
-    Gauge-  I also added profit as a gauge metric to analyze profit. As the entire dashboard is interactive we can filter the profit according to product, category and team.
+    Gauge- I also added profit as a gauge metric to analyze profit. As the entire dashboard is interactive we can filter the profit according to product, category and team.
+
+
 
     snap of Dashboard-
     ![image](https://github.com/user-attachments/assets/24f10040-b6e7-4198-93af-505766d3e4bc)
 
 
-- step 2: Added a clustered coloumn chart with profit and sales on y-axis and teams on x-axis. Added products as a slicer. This provides insights on Actual performance by product, person and team.
+- page 2: Gives insights on performance of product, we have two cards on top which gives specific details of the product which you can choose from the slicer.
+Further breakdown of product performance we have a bar chart which provide details for sales person for the product. We have a coloumn chart which give perfomance of team for the product and we have a line chart for the sale of product  over the year forecasting 2 months of future sale
+
 
     snap of dashboard-
-    ![image](https://github.com/user-attachments/assets/0b525271-fc9c-4eb7-bc12-33b9fcc378c7)
+    ![image](https://github.com/user-attachments/assets/ec0caf36-41c8-4c0f-ba32-e597a0576b8d)
 
 
-- step 3: Added a clustered coloumn chart, plotting variance on y-axis and sales person from dsalesperson on x-axis. This provide insights on variance analysis by sales person.
 
-    snap of dashboard-
-    ![image](https://github.com/user-attachments/assets/dd65cef4-653d-4ace-87d4-bc13afd43834)
-
-
-- step 4: Added a table and added Sales person, Total Sales, Variance and variance% in the coloumn field. On the field section of the table right click and select conditional formatting. From there add data bars, I've selected blue colour for positive values and red colour for negative values. Also added two line charts one is vartiance against months and second is line chart of variance% by category. This provide insights on variance analysis by sales person.
+- page 3: Gives more insights on product performance, we have a table which lists all the products and how they have performed. I've also added two card with more product specific details. Also added a chart which tells how team has performed across the product
 
     snap of dashboard-
-    ![image](https://github.com/user-attachments/assets/5c7be262-8020-411a-b0ab-382955448231)
+    ![image](https://github.com/user-attachments/assets/157080c7-5517-485e-8756-53bdb8300741)
 
 
-- step 5: We insert a table and added month, sales person and variance in the coloumn field, apply dual sort one on the month coloumn and second on the variance coloumn. This provide details on Who has most variance in each month.
 
-    snap of dashboard-
-    ![image](https://github.com/user-attachments/assets/9c70c688-ec0e-4345-8887-a71e3927a581)
-
-
-- step 6: Insert a table and add products, boxes, profit per box and profit in the field section. This provide insights on most profitable product. Also I've added a coloumn chart for team against profit. This gives an idea of the most profitable team and the most profitable product.
+- Page 4: Gives insight on Sales person performance. We have a table which lists all the sales person and their performance. We also have 2 bar charts showing sales and profit by sales person. We also have a coloumn chart showing their variance from target
 
     snap of dashboard-
-    ![image](https://github.com/user-attachments/assets/294c523d-a08a-4f8d-a60f-89f5fd6c029e)
+    ![image](https://github.com/user-attachments/assets/187d60fa-c644-4984-b487-9473744d8d01)
 
 
-- step 7 : PLot a line chart with sales against months. From the add further analysis button find forecast and turn it on. Forecast to the period of next 3 months and add a trendline. This gives us a forecast for next 3 months.
 
-    snap of Dashboard-
-    ![image](https://github.com/user-attachments/assets/70c03b3e-338f-47f0-b892-ace9ffddac96)
+- Page 5: Gives insights on variance of sales person. We have a table showing variance from target by every sales person. We can select the range of date for which we want our data from the slicer. Also we have two charts which gives sales and variance for the particular date range
 
-
-- step 8 : Plot a bar chart with sales against sales person and profit against sales person. This will provide detail on sales person with most sales and sales person with most profit.
+    snap of dashboard-
+    ![image](https://github.com/user-attachments/assets/7c275067-2450-4418-ae7c-e6a1435a3984)
 
 
-    snap of Dasdhboard-
-    ![image](https://github.com/user-attachments/assets/54d709c2-bb0c-4777-a862-e3f38c9289f7)
+
 
 
 ### Analysis on insights provided
@@ -201,7 +201,7 @@ An overall sales of 22M was achieved while shipping a total of 1M boxes, we did 
 
 Yummies was the most profitable team, Karlen Mccafrey did the most sales while Roddy Speechley was the most profitable. Gunner CockShoot was the sales person with the highest variance
 
-85% dark bars was the most profitsable item ($968,053), but milk bars had the most profit per box ($23.08)
+85% dark bars was the most profitsable item ($968,053), but milk bars had the most profit per box ($23.08), White Choc was the most sold product
 
 Over the one year period we saw rise and fall in our sales, but we witnessed a steep rise in sales in the month of jul with sale peaking on aug 1. The trend line and forecast however suggest that this will not continue to increase and we may see decline in the coming 3 months.
 
