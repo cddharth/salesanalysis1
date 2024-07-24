@@ -147,7 +147,7 @@ From page 2 onwards I've tried to answer the following questions which were form
 
 - page 1: I've added 3 cards, a slicer, 4 charts and a gauge meter for the 1st page of the report.
 
-    cards- Will provide information on total sales, total boxes shipped and the average of sales
+    cards- Will provide information on total sales, total boxes shipped, No. of products and the average of sales
 
     slicer- added category of product as a filter so that we can sort data based on category
 
@@ -158,7 +158,8 @@ From page 2 onwards I've tried to answer the following questions which were form
 
 
     snap of Dashboard-
-    ![image](https://github.com/user-attachments/assets/24f10040-b6e7-4198-93af-505766d3e4bc)
+    ![image](https://github.com/user-attachments/assets/4da1ec69-a813-49ac-9451-fcb1f58fc52c)
+
 
 
 - page 2: Gives insights on performance of product, we have two cards on top which gives specific details of the product which you can choose from the slicer.
