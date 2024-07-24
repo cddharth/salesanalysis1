@@ -186,6 +186,12 @@ From page 2 onwards I've tried to answer the following questions which were form
     ![image](https://github.com/user-attachments/assets/70c03b3e-338f-47f0-b892-ace9ffddac96)
 
 
+- step 8 : Plot a bar chart with sales against sales person and profit against sales person. This will provide detail on sales person with most sales and sales person with most profit.
+
+
+    snap of Dasdhboard-
+    ![image](https://github.com/user-attachments/assets/54d709c2-bb0c-4777-a862-e3f38c9289f7)
+
 
 ### Analysis on insights provided
 
